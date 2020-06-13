@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>プロフィール手帳</title>
+    <style>
+      /* この中にcssをかけます */
+      body {
+        background-image: url(img/haikei.gif);
+      }
+
+      header {
+        margin: auto;
+        text-align: center;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 50px;
+        background-color: lightgoldenrodyellow;
+      }
+
+      .box {
+        margin: auto;
+        text-align: center;
+        padding: 50px;
+      }
+
+      .box p {
+        font-size: 30px;
+        padding-bottom: 30px;
+      }
+
+      input[type="text"],
+      textarea {
+        padding: 0.8em;
+        outline: none;
+        border: 1px solid #ddd;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        font-size: 16px;
+      }
+      textarea {
+        width: 300px;
+      }
+
+      #output p {
+        background: lemonchiffon;
+        margin-left: 45px;
+        margin-top: 20px;
+        width: 500px;
+        text-align: left;
+      }
+
+      #output {
+        background: lightblue;
+        width: 600px;
+        margin: auto;
+        border: 5px solid black;
+      }
+
+      footer{color: white;
+      background-color: brown;
+      font-size: 30px;
+      text-align: center;
+
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ブラウザの画面に見える内容 -->
+    <header><img src="img/office.png" alt="オフィス" /></header>
+    <h1>プロフィール手帳アプリ</h1>
+
+    <div class="box">
+      <p>プロフィールを入力してください</p>
+
+      <div>
+        <!-- 名前 -->
+        名  前
+        <input type="text" id="username" />
+      </div>
+    </br>
+      <div>
+        <!-- 性別 -->
+        性  別
+        <input type="text" id="gender" />
+      </div>
+    </br>
+
+      <div>
+        <!-- 血液型 -->
+        血液型
+        <input type="text" id="bloodtype" />
+      </div>
+    </br>
+
+      <div>
+        <!-- 生年月日 -->
+        誕生日
+        <input type="text" id="birthday" />
+      </div>
+    </br>
+
+      <div>
+        <!-- 電話番号 -->
+        T E L
+        <input type="text" id="tel" />
+      </div>
+    </br>
+      <div>
+        <!-- email -->
+      メール
+        <input type="text" id="mail" />
+      </div>
+    </br>
+      <div>
+        <!-- email -->
+      住  所
+        <input type="text" id="adress" />
+      </div>
+    </br>
+      <div>
+        <!-- 詳細入力 -->
+        詳細（印象に残ったことをメモ)</br>
+        <textarea name="" id="text" cols="30" rows="10"></textarea>
+      </div>
+    </br>
+      <div>
+        <!-- 送信ボタン -->
+        <button id="send">送信</button>
+      </div>
+    </div>
+
+    <div>
+      <!-- 保存されたデータが表示される箇所 -->
+      <div id="output"></div>
+    </div>
+  </br>
+    
+    <footer>プロフィールアプリ</footer>
+    
+    <!--/ ブラウザの画面に見える内容 -->
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!--** 以下Firebase **-->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <!-- ここにfirebaseのscriptを貼り付ける -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBGtRqfs7Qx-_rdOIA8cQXCyVcxPUP8nFo",
+        authDomain: "camp07-7eebd.firebaseapp.com",
+        databaseURL: "https://camp07-7eebd.firebaseio.com",
+        projectId: "camp07-7eebd",
+        storageBucket: "camp07-7eebd.appspot.com",
+        messagingSenderId: "505661834094",
+        appId: "1:505661834094:web:253021b6ba3d95d318377f",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      //firebaseのデーターベース（保存させる場所）を使いますよと言うjsのコードを貼り付ける
+      // xxxxxスクリプトを貼り付ける
+      const newPostRef = firebase.database().ref();
+
+      // ここから下にjqueryの処理を書いて練習します
+      // 送信ボタンをクリックされたら次の処理をする
+
+      $("#send").on("click", function () {
+        //変数を必ずまず受け取る
+        let username = $("#username").val(); //名前
+        let gender = $("#gender").val(); //性別
+        let blood = $("#bloodtype").val(); //血液型
+        let birthday = $("#birthday").val(); //誕生日
+        let tel = $("#tel").val(); //電話番号
+        let mail = $("#mail").val(); //メールアドレス
+        let adress = $("#adress").val(); //住所
+        let text = $("#text").val(); //詳細
+        /* 　// データを登録で送る
+     // 変数を活用する、val()を使って取得
+     // firebaseの送信処理を記述 */
+        newPostRef.push({
+          username: $("#username").val(), //名前を登録する */
+          gender: $("#gender").val(), // 性別
+          blood: $("#bloodtype").val(), // 血液型
+          birthday: $("#birthday").val(), // 誕生日
+          tel: $("#tel").val(), // 電話番号
+          mail: $("#mail").val(), // メールアドレス
+          adress: $("#adress").val(), // 住所
+          text: $("#text").val(), // 詳細
+        });
+
+        /* // 入力後に空欄にする処理  */
+        $("#username").val("");
+        $("#bloodtype").val("");
+        $("#tel").val("");
+        $("#mail").val("");
+        $("#gender").val("");
+        $("#text").val("");
+        $("#birthday").val("");
+        $("#adress").val("");
+      });
+
+      // 受信処理
+      newPostRef.on("child_added", function (data) {
+        let v = data.val(); //ここに保存されたデータが入ってくる
+        // let k = data.key; //今回は使わない
+
+        console.log(v); //vの変数に入っているオブジェクトを全てみる
+
+        let str = `<p>名前：${v.username}<br>性別：${v.gender}<br>血液型：${v.blood}<br>
+          誕生日：${v.birthday}<br>TEL：${v.tel}<br>email：${v.mail}<br>住 所：${v.adress}<br>詳細：${v.text}<br><p>`;
+
+        //strはstring文字列の意味
+        // ここでデータをhtmlに埋め込む
+        //prependは先頭からデータをくみこんでいく
+        $("#output").prepend(str);
+      });
+
+      $("#text").on("keydown", function (event) {
+        console.log(event);
+      });
+    </script>
+  </body>
+</html>
