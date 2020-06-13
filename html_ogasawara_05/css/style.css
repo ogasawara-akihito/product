@@ -1,0 +1,309 @@
+/* ここから下に記載していく */
+
+html{
+    font-size: 16px;
+}
+
+body{
+    columns: #333333;
+    font-size: 16px;
+    }
+
+.text-center{
+    text-align: center;
+}
+
+.header{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    width:auto;
+}
+
+ul.header__nav{
+    display:flex;
+    font-size: 21px;
+}
+
+.header__nav li{
+    margin-right:48px;
+}
+/* mainvisual */
+
+.mainvisual{
+    height: 300px;
+    background-image: url("../img/mainbg.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:auto;
+
+}
+/* 世界を変えるチーズを作ろう */
+
+.mainvisual__title{
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    text-align:center;
+    padding-top:100px;
+
+}
+
+/* チーズ職人養成学校 */
+.mainvisual__subtitle{
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* --------about以下 --------*/
+
+.wrapper{
+    padding: 30px 0;
+    
+    margin: auto;
+}
+
+
+.about{
+    text-align: center;
+    margin: 50px 0;    
+    }
+
+
+.about__title{
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffd61a;
+    margin-bottom: 30px;
+
+}
+
+.about__subtitle{
+      margin-bottom:20px;
+      font-size: 16px;
+}
+
+.about__text{
+    margin-bottom: 20px;
+}
+
+    
+/* 写真のコーナー */
+
+.imgBox{
+    display:flex;
+}
+
+.imgBox p img{
+    width:120%;
+}
+
+
+/* ここからコース の項目*/
+
+.course{
+    padding:60px 0 0;
+    width: auto;
+    
+}
+
+.course__title{
+    font-weight: bold;
+    text-align: center;
+    font-size: 24px;
+}
+
+.course__subtitle{
+    text-align: center;
+    margin: 20px 0 10px;    
+}
+.course__subtitle2{
+    margin: 0 0 20px;
+}
+
+.course__item1{
+    display: flex;
+    background-color:#f4f4f4; 
+}
+
+.course__text1{
+    width: 480px;
+}
+
+.course__texttitle1{
+    font-weight: bold;
+    margin: 120px 50px 40px;
+    font-size: 18px;
+    text-align: left;
+
+}
+.course__eyecatch{
+    text-align: left;
+    margin: 0 50px 0;
+    
+}
+
+
+/* -----NEWS---------- */
+
+.wrapper2{
+    width:auto;
+    margin:auto;
+}
+
+.news{
+    padding:80px 0;
+    /* background-color: #f4f4f4; */
+}
+
+.news__list{
+    display: flex;
+    text-align: center;
+}
+
+.news__item{
+    width: 100%;
+    
+}
+
+
+.news__title{
+    margin: 0 0 64px;
+    font-size: 24px;
+    font-weight:bold;
+}
+
+
+.news__eyecatch{
+    margin: 0 0 24px;
+    align-items: center;
+
+}
+
+.news__contents{
+    padding: 0 100px;
+    width:300px;
+    text-align: left;
+}
+
+.news__heading{
+    margin: 0 0 16px;
+    font-weight: bold;
+    line-height: 2;
+    text-align:left;
+    
+}
+
+
+.btn{
+    display: block;
+    width: 300px;
+    height: 30px;
+    margin: auto;
+    padding: 21px 0;
+    background-color: #ffd61a;
+    color: #fff;
+    font-size:18px ;
+    text-align: center;
+}
+
+
+/*ACCESS  */
+
+.accesswrap{
+    background-color:#f4f4f4 ;
+    width: 1000px;
+    align-items: center;
+    margin: auto;
+
+}
+    .access__title{
+        text-align:center;
+        font-weight: bold;
+        padding: 30px 0 0;
+        font-size:24px;}
+
+    .access__subtitle{
+        text-align: center;
+        margin: 10px;
+    }    
+    
+
+/* ----------------CONTACT------------- */
+.contact{
+    width: 560px;
+    text-align: center;
+    margin: auto;
+}
+
+
+
+.contact__title{ 
+    font-weight: bold;
+    text-align: center;
+    font-size: 24px;
+}
+
+.contact__subtitle{
+    padding:30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.contact__text{
+    text-align: center;
+    padding: 30px;
+}
+
+.contact__subtext{
+    text-align: center;
+    padding: 30px;
+}
+
+
+.formbox{
+    align-content:center;
+    width: 600px;
+    padding:60px;
+    margin:auto;
+}
+
+.form__text{
+    width:500px;
+    text-align:left;}
+
+.frame{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+    
+.span{
+    display: flex;
+}
+
+.submit{
+    display: block;
+    width: 300px;
+    height: 30px;
+    margin: auto;
+    background-color: #ffd61a;
+    color: #fff;
+    font-size:18px ;
+    text-align: center;
+}
+
+/* コピーライト */
+
+.footer{
+    padding: 24px 0;
+    background-color: #707070;
+}
+.copyrights{
+    color: #fff;
+}
