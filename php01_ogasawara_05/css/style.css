@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #90cbee;
+  width: 700px;
+}
+
+header {
+  padding: 0 0 0 180px;
+  font-size: 50px;
+}
+
+h1 {
+  color: red;
+  margin: left;
+  padding: 0 0 0 35px;
+  font-size: 25px;
+}
+
+footer {
+  color: white;
+  background-color: red;
+  font-size: 30px;
+  padding: 0 0 0 250px;
+}
