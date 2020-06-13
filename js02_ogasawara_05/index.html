@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>myMemoPad</title>
+    <script src="js/jquery-2.1.3.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!--タイトル  -->
+    <header>
+      <h1 class="title">毎日日記</h1>
+    </header>
+
+ <main style="display: none;">
+    <div class="input_box">
+     <!-- 日記の日付入力欄 -->
+      <span>日付</span>
+      <input type="text" id="key" />
+     </dv>
+    
+      <!-- 日付と入力欄横並び -->
+      <div class="box">
+      <span>本文</span>
+      <textarea id="memo"></textarea>
+      <ul>
+        <li id="save">保存</li>
+        <li id="clear">全削除</li>
+        <!-- <li id="yclear">前日削除</li> -->
+      </ul>
+    </div>
+        <div class="container">
+        <ul class="list_box1">
+        <li id="list"></li>
+        </ul>
+    </main>
+
+
+      <script src="js/memo.js"></script>
+  </body>
+</html>
